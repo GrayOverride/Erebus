@@ -5,12 +5,7 @@ var selects = 0;
 var selected = [{}];
 
 function gallerybtn(){
-    if(selects >=1){
-        document.getElementById('addgallery').innerHTML="Add selected to Gallery"
-    }
-    if(selects == 0){
-        document.getElementById('addgallery').innerHTML="nothing selected"
-    }
+
 }
 
 //catch the enterkey, mostly for this developers sanity during debug
@@ -80,6 +75,7 @@ function flickrsearch(searchvar,perPage,imgsize) {
 
 function selectImage(imgID){
 
+
     if(imgID.className == "selected") {
 
         imgID.className = "";
@@ -104,11 +100,14 @@ function selectImage(imgID){
 
 }
 function addToGallery(){
+    var d = document.getElementById('gallery');
+    d.className = "visible";
     for(var i = 0; i < selected.length; i++) {
         if(gallery.contains(selected[i].id)) {
 
         }else{
             gallery.push(selected[i].id);
+
 
         }
     }
@@ -144,6 +143,8 @@ function displayLargeImage(imageID){
 
 }
 function showGallery(){
+    var k = document.getElementById("gallery");
+    k.className = "hidden";
     var d = document.getElementById("controls");
     d.className = "colum-lg hidden";
     var b = document.getElementById("back");
