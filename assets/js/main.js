@@ -74,6 +74,8 @@ function flickrsearch(searchvar,perPage,imgsize) {
 }
 
 function selectImage(imgID){
+    var d = document.getElementById('addgallery');
+    d.className = "visible";
 
 
     if(imgID.className == "selected") {
@@ -177,6 +179,10 @@ function showGallery(){
 
 }
 function newSearch() {
+    var c = document.getElementById("addgallery");
+    c.className = "hidden";
+    var k = document.getElementById("gallery");
+    k.className = "visible";
     var d = document.getElementById("controls");
     d.className = "colum-lg visible";
     var b = document.getElementById("back");
