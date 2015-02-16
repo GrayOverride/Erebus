@@ -7,25 +7,33 @@
 </head>
 <body class="globalwrapper">
 <div class="colum-md">
+    <div id="back" class="hidden">
+        <label for="SearchAgain">Search Again</label>
+        <button id="SearchAgain" type="button" onClick="newSearch()">Back to Search</button>
+    </div>
+    <div id="controls" class="colum-lg">
+
     <label for="searchInput">Search</label>
     <input id="searchInput" type="text">
     <label for="searchbtn"></label>
-    <input id="search" type="button" value="Search" onClick="displayImg()">
-    <button id="addgallery" onclick="addToGallery()">Show Gallery</button>
-    <button id="gallery" onclick="showGallery()">Show Gallery</button>
-    <div class="colum-lg">
-        <label for="searchAmount">Max Results</label>
-    <select id="searchAmount">
-        <option value="100">100</option>
-        <option value="200">200</option>
-        <option value="500">500</option>
-    </select>
-        <label for="searchSize">Imagesize</label>
-    <select id="searchSize">
-        <option value="m">small</option>
-        <option value="t">thumbnail</option>
-        <option value="z">medium</option>
-    </select>
+    <input id="searchbtn" type="button" value="Search" onClick="displayImg()">
+
+        <button id="addgallery" onclick="addToGallery()">Show Gallery</button>
+        <button id="gallery" onclick="showGallery()">Show Gallery</button>
+        <div class="colum-lg">
+                <label for="searchAmount">Max Results</label>
+            <select id="searchAmount">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+            </select>
+                <label for="searchSize">Imagesize</label>
+            <select id="searchSize">
+                <option value="m">small</option>
+                <option value="t">thumbnail</option>
+                <option value="z">medium</option>
+            </select>
+        </div>
 
     </div>
 </div>

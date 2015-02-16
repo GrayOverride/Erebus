@@ -43,7 +43,9 @@ function clearResults(divID)
     document.getElementById(divID).innerHTML = "";
 }
 function flickrsearch(searchvar,perPage,imgsize) {
+    selected  = [{}];
     var searchresult = httpGet("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + ckey + "&text=" + searchvar+"&per_page="+perPage);
+    clearResults("containerOne");
     clearResults("containerTwo");
     if (window.DOMParser) {
         parser = new DOMParser();
@@ -115,7 +117,9 @@ function addToGallery(){
 
 }
 function displayLargeImage(imageID){
+    clearResults("containerTwo");
     var image = httpGet("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key="+ckey+"&photo_id="+imageID);
+
     if (window.DOMParser) {
         parser = new DOMParser();
         xmlDoc = parser.parseFromString(image, "text/xml");
@@ -133,14 +137,20 @@ function displayLargeImage(imageID){
     anchor = document.getElementById("containerTwo");
     large = document.createElement('img');
     large.setAttribute('id',imgId);
-    large.setAttribute('onclick','clearResults("containerTwo");');
+    large.setAttribute('onclick','clearResults("containerTwo")');
     large.setAttribute('src',imgSource);
     large.setAttribute('class',"large");
     anchor.appendChild(large)
 
 }
 function showGallery(){
+    var d = document.getElementById("controls");
+    d.className = "colum-lg hidden";
+    var b = document.getElementById("back");
+    b.className ="visible";
+
     clearResults("containerTwo");
+
     for (index = 1; index < gallery.length; ++index) {
 
         var image = httpGet("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key="+ckey+"&photo_id="+gallery[index]);
@@ -164,6 +174,14 @@ function showGallery(){
     }
 
 
+}
+function newSearch() {
+    var d = document.getElementById("controls");
+    d.className = "colum-lg visible";
+    var b = document.getElementById("back");
+    b.className = "hidden";
+    clearResults("containerOne");
+    clearResults("containerTwo");
 }
 function displayImg(){
     var sInput = document.getElementById('searchInput').value;
