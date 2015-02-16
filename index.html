@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Arbetsprov</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body class="globalwrapper">
+<div class="colum-md">
+    <label for="searchInput">Search</label>
+    <input id="searchInput" type="text">
+    <label for="searchbtn"></label>
+    <input id="search" type="button" value="Search" onClick="displayImg()">
+    <button id="addgallery" onclick="addToGallery()">Show Gallery</button>
+    <button id="gallery" onclick="showGallery()">Show Gallery</button>
+    <div class="colum-lg">
+        <label for="searchAmount">Max Results</label>
+    <select id="searchAmount">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+    </select>
+        <label for="searchSize">Imagesize</label>
+    <select id="searchSize">
+        <option value="m">small</option>
+        <option value="t">thumbnail</option>
+        <option value="z">medium</option>
+    </select>
+
+    </div>
+</div>
+<div class="searchResults colum-lg">
+    <div id="containerOne" class="colum-lg"></div>
+    <div id="containerTwo">
+    </div>
+</div>
+<div class="col-lg">
+
+</div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
